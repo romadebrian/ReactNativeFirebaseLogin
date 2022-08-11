@@ -13,8 +13,8 @@ import firebase from "../../config/firebase";
 const Login = (props) => {
   // console.log(props);
   var navigation = props.navigation;
-  const [email, setEmail] = useState("romadebrian@yahoo.com");
-  const [password, setPassword] = useState("04121998");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = () => {
     // alert("You tapped the button!");
@@ -28,7 +28,7 @@ const Login = (props) => {
 
         navigation.navigate("Home");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert(error));
   };
 
   return (
@@ -52,7 +52,10 @@ const Login = (props) => {
         <Button onPress={handleLogin} title="Login" />
       </View>
 
-      <TouchableOpacity style={{ width: 200, marginTop: 20 }}>
+      <TouchableOpacity
+        style={{ width: 200, marginTop: 20 }}
+        onPress={() => navigation.navigate("Register")}
+      >
         <Text style={{ color: "blue" }}>Register</Text>
       </TouchableOpacity>
     </View>
