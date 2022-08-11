@@ -1,4 +1,6 @@
 apply plugin: "com.android.application"
+apply plugin: "com.google.gms.google-services"
+
 
 import com.android.build.OutputFile
 
@@ -284,6 +286,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation platform('com.google.firebase:firebase-bom:30.3.2')
 }
 
 if (isNewArchitectureEnabled()) {
